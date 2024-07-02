@@ -1,26 +1,21 @@
 #!/bin/bash
-# Wrapper script to block alexa from shouting at me like the crazy woman she is
 
-log_file=/home/cosmo/Desktop/projects/antialexa-v2/antialexa.log
+log_file=$HOME/Desktop/projects/antialexa-v2/antialexa.log
+env_log_file=$HOME/Desktop/projects/antialexa-v2/antialexa-env.log
+debug_log_file=$HOME/Desktop/projects/antialexa-v2/antialexa-debug.log
 
-#introduce logs
+# Introduce logs
 echo "Bluetooth device connected" >> $log_file
+env >> $env_log_file
 
-# Remove the cookie file if it exists (with sudo if necessary)
-sudo rm -f /tmp/.alexa.cookie
-
-#muting alexa to logs
+# Muting Alexa
 echo "Muting Alexa" >> $log_file
-# Mute Alexa
-/home/cosmo/Desktop/projects/antialexa-v2/alexa_remote_control.sh -e vol:0
+/home/cosmo/Desktop/projects/antialexa-v2/alexa_remote_control.sh -e vol:0 >> $debug_log_file 2>&1
 
-# log of sleeping
+# Log of sleeping
 echo "Sleeping for 5 seconds" >> $log_file
-# Wait for 5 seconds
 sleep 5
 
 # Set volume back to 100
-/home/cosmo/Desktop/projects/antialexa-v2/alexa_remote_control.sh -e vol:100
-# log of unmuting
+/home/cosmo/Desktop/projects/antialexa-v2/alexa_remote_control.sh -e vol:100 >> $debug_log_file 2>&1
 echo "Unmuting Alexa" >> $log_file
-

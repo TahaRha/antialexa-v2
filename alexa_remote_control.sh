@@ -99,7 +99,7 @@
 
 # this can be obtained by doing the device registration login flow
 #  e.g. from here: https://github.com/adn77/alexa-cookie-cli/
-SET_REFRESH_TOKEN='Atnr|EwICIAclhC4QIRc71QQJXBvMbPxph1Bc5mn1WhaNqldktEhWro-vzxLkVuy0n6bnwDopJZ9a0RS0DH5RygmR9lizcVl5lYiyEKAiUh6Yg3CITWo29CxYCmm_FzYo9uQn-Lb_IpZ7j0Iql08yeaKx0xScsg1tjmxSNjo2xzsTNXEmFgFMtbYJ2zB_1pSBRglftOB2jiJLY8-15ebKw1h04x7OVqONLQQLfHJ55E7NjomRCV-aZ93g3bUr7q-tcEKJ9jBZK4ZoSWaw2yO7poaYTE8SKTjHAkS4NKEn4W8PjHY7q0rqkR7RRjovh91OWCxiCGW9ZbI'
+SET_REFRESH_TOKEN='Atnr|EwICINcul1-1xQ45JismbqpFLOyb5DMbGu5nFYChMBM_U56-FtRfhpbLx1Y3_T5VTEQUv9morBWmi5ujvxUqodVtbQGAbbtKezCoxKeL0SJVy1oLhDl9HPqDIrXgqyn2z6pjYhlWrBcWhPEdQYQEwU6CZpd5S9LsvvwENFmm_Q8xJF9v8OrnMb-VyxZ2XdKIyIC-Yx5Y4_B84SXYZ0dObD4wzJwFctezA5TDUxo2ijhAAFuAFYr0g-s_khwOKbARg_Uy5VTmWcvGUB9-BZHF35Gyb7rLHBAKXKbT_VC9RRpLwrpMnG5Tso3zYDVnYrIH4fQvErg'
 
 SET_TTS_LOCALE='en-CA'
 
@@ -127,7 +127,7 @@ SET_BROWSER='Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:1.0) bash-script/1.0'
 SET_JQ='/usr/bin/jq'
 
 # tmp path
-SET_TMP="/tmp"
+SET_TMP="$HOME/tmp"
 
 # Volume for speak commands (a SPEAKVOL of 0 leaves the volume settings untouched)
 SET_SPEAKVOL="0"
