@@ -53,9 +53,11 @@ AntiAlexa v2 is a script designed to automatically mute your Alexa device when a
     ```bash
     sudo nano /etc/udev/rules.d/99-bluetooth-alexa.rules
     ```
-2. Add the following rule to the file:
+2. Add the following rule to the file (adjust the address and path as needed):
     ```bash
-    ACTION=="add", SUBSYSTEM=="bluetooth", ATTRS{address}=="00:F3:61:51:96:45", RUN+="/home/c
+    ACTION=="add", SUBSYSTEM=="bluetooth", ATTRS{address}=="00:F3:61:51:96:45", \
+      RUN+="/path/to/antialexa-v2/antialexa-wrapper.sh"
+    ```
 
 3. Reload udev rules:
     ```bash
@@ -67,3 +69,14 @@ AntiAlexa v2 is a script designed to automatically mute your Alexa device when a
 To test the script manually, run:
 ```bash
 ./antialexa.sh
+```
+
+### Refreshing Tokens
+
+If commands fail with `cookie retrieval` errors, the refresh token stored in
+`alexa_remote_control.sh` may have expired. Generate a new one using the bundled
+`alexa-cookie-cli-linux-x64` tool:
+
+```bash
+./alexa-cookie-cli-linux-x64 -a amazon.com -d alexa.amazon.com -t ./tokens.txt
+```
